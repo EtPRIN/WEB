@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <!-- <link rel="stylesheet" href="../css/style.css"/> -->
+        <link rel="stylesheet" href="../css/style.css"/>
+        <title>Etienne-Théodore PRIN site Web</title>
+    </head>
+    <body>
+        <div id="bloc_page">
+            <!-- En tête de la page-->
+            <header>
+                <div id="main-title">
+                    <h1>PRIN</h1>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="home.html">CV</a>
+                        </li>
+                        <li><a href="#">Projets de Data Science</a>
+                        </li>
+                        <li><a href="#">Projets de Machine Learning</a>
+                        </li>
+                        <li><a href="TIetCV.html">Projets de Traitement d'image et Computer Vision</a> 
+                            <!--
+                            <ul>
+                                <li><a href="#">Restauration et amélioration d'image<a></li>
+                                <li><a href="#">Morphologie mathématique<a></li>
+                            </ul>-->
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <div id="banniere">
+                <!--Si on desire une bannière ici non-->
+                <p></p>
+            </div>
+            <div id="bloc_interior">
+                <article>
+                    <h1>Restauration et amélioration d'image</h1>
+                    <ul>
+                        <li><h2>Amélioration d'histogramme</h2>
+                            <p>Ce premier projet consiste à modifier l'histogramme d'une image en noir et blanc de sorte à améliorer le contraste.</p>
+                            <div id="exemple"><img class="image" src="../img/osteoblaste.jpg"/><div class="arrow-right"></div><img class="image" src="../img/result.jpg"/></div>
+                            <p>Il marche aussi pour passer une image couleur en noir blanc</p>
+                            <div id="exemple"><img class="image" src="../img/follicule.bmp"/><div class="arrow-right"></div><img class="image" src="../img/result_fol.jpg"/></div>
+                            <p>Le code est trouvable <a href='#'>ici</a>, mais est remplacable par la fonction exposure.equalise_hist() du module skimage</p>
+                        </li>
+                        <li><h2>Transformation de Fourier en 2 dimension</h2>
+                            <p>Ce projet utilise les transformer de Fourier pour l'analyse d'image. On choisit en premier temps notre image:</p>
+                            <img class="image" src="../img/cornee.png"/>
+                            <p>On applique les transformer de Fourier à cette image et nous obtenons les images en Amplitude et en Phase esuivant :</p>
+                            <div id="exemple"><img class="image" src="../img/log_amplitude_fft.jpg"/><div class="espace"></div><img class="image" src="../img/phase_fft.jpg"/></div>
+                            <p>Si maintenant on applique la transformer de Fourier inverse on obtient pour les deux :</p>
+                            <div id="exemple"><img class="image" src="../img/ifft_log_amplitude_fft.jpg"/><div class="espace"></div><img class="image" src="../img/ifft_phase_fft.jpg"/></div>
+                            <p> Sur cette image les deux résultat sont inintéressants cependant l'inverse de la transformer de Fourier de la phase peux donner des résultats intéressant comme la détection de contours, en voici un exemple:</p>
+                            <div id="exemple"><img class="image" src="../img/simulation.png"/><div class="arrow-right"></div><img class="image" src="../img/ifft_phase_interessant.jpg"/></div>
+                            <p>Le code est trouvable <a href='#'>ici</a></p>
+                        </li>
+                        <li><h2>Utilisation des transformées de Fourier</h2>
+                            <p>Nous allons ici utiliser les codes du projet précédent pour faire une filtre passe-bas et passe haut sur l'image de cornée utilisé précedement<br>
+                            Commençons par le filte passe-bas (qui nous fait perdre les petit détails):</p>
+                            <div id="exemple"><img class="image" src="../img/cornee.png"/><div class="arrow-right"></div><img class="image" src="../img/pb_filter.jpg"/></div>
+                            <p>Maitenant le filte passe-bas (qui nous fait perdre les grands détails):</p>
+                            <div id="exemple"><img class="image" src="../img/cornee.png"/><div class="arrow-right"></div><img class="image" src="../img/ph_filter.jpg"/></div>
+                            <p>Pour biens voir l'intérêts de ceci nous allons le faire avec une image différente:
+                                <br>filtre passe-bas:</p>
+                            <div id="exemple"><img class="image" src="../img/simulation.png"/><div class="arrow-right"></div><img class="image" src="../img/sim_pb_filter.jpg"/></div>
+                            <p>filtre passe-haut:</p>
+                            <div id="exemple"><img class="image" src="../img/simulation.png"/><div class="arrow-right"></div><img class="image" src="../img/sim_ph_filter.jpg"/></div>
+                            <p>Ici nous avons pour l'instant un filtre rectangulaire binaire si nous utilisons à la place une guaussienne nous obtenons de meilleur résultat:</p>
+                        </li>
+                        <li><h2>Utilisation des transformées de Fourier</h2>
+
+                        </li>
+                    </ul>
+                </article>
+            </div>
+            <footer>
+                <P>Footer (à remplir)</P>
+            </footer>
+        </div>
+    </body>
+</html>
